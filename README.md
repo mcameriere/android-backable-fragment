@@ -1,7 +1,7 @@
 # android-backable-fragment
 How to handle OnBackPressed in Fragment
 
-The OnBackPressed is a method you override in the hosting Activity.
+The OnBackPressed is a method you override at the activity level:
 
     public class MainActivity extends AppCompatActivity {
 
@@ -12,13 +12,13 @@ The OnBackPressed is a method you override in the hosting Activity.
 
     }
 
-To handle the event on the fragment level, first create an interface
+To handle the event at the fragment level, first create an interface:
 
     public interface Backable {
         boolean onBackPressed();
     }
 
-Make the Fragment implement the interface
+Make the fragment implement the interface:
 
     public class SimpleFragment extends Fragment implements Backable {
 
@@ -29,7 +29,7 @@ Make the Fragment implement the interface
         }
     }
     
-In the hosting Activity, delegate the work to the Fragment
+In the hosting activity, delegate the work to the fragment:
 
     public class MainActivity extends AppCompatActivity {
 
